@@ -1,24 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Slider = UnityEngine.UI.Slider;
 using dreamcube.unity.Core.Scripts.Signals.Events;
 using dreamcube.unity.Core.Scripts.Util;
-using Serilog;
 
 public class BallCalculator : MonoBehaviour
 {
     public Vector3 velocity;
     public Vector3 impulse;
-
-    //public TextMeshProUGUI speedLabel;
-    //public UnityEngine.UI.Slider speedSlider;
-
-    //public TextMeshProUGUI impulseLabel;
-    //public UnityEngine.UI.Slider impulseSlider;
 
     private Vector3 _lastPosition;
     private Vector3 _lastVelocity;
@@ -27,8 +15,6 @@ public class BallCalculator : MonoBehaviour
     {
         _lastPosition = transform.position;
         _lastVelocity = Vector3.zero;
-
-        //FindDebugUIManager();
     }
 
     public void OnEnable()
@@ -44,25 +30,14 @@ public class BallCalculator : MonoBehaviour
         }
     }
 
-    private void EventHandler(string theEvent, string msg, GameObject sender, DataModelBase data)
+    private void EventHandler(string theEvent, string msg, GameObject sender)
     {
         if (theEvent == EventStrings.EventOnAllScenesLoaded)
         {
-            FindDebugUIManager();
         }
     }
 
-    private void FindDebugUIManager()
-    {
-        GameObject uiManagerObject = GameObject.FindWithTag("UI Manager");
-        if (uiManagerObject != null)
-        {
-        }
-        else
-        {
-            Log.Debug("couldn't find UI Manager");
-        }
-    }
+
 
     private void FixedUpdate()
     {
@@ -91,9 +66,6 @@ public class BallCalculator : MonoBehaviour
         //observed max speed was nearly 12, so max out the slider at around 14-15
         float normalizedSpeed = Extensions.mapRange(0, 15, 0, 1, speed);
 
-        //speedLabel.text = speed.ToString("#.00");
-        //speedSlider.value = normalizedSpeed;
-
         //impulse
         float impulseMag = Math.Abs(impulse.magnitude);
         if (impulseMag > _maxImpulse)
@@ -103,7 +75,5 @@ public class BallCalculator : MonoBehaviour
 
         float normalizedImpulse = Extensions.mapRange(0, 15, 0, 1, impulseMag);
 
-        //impulseLabel.text = impulseMag.ToString("#.00");
-        //impulseSlider.value = normalizedImpulse;
     }
 }

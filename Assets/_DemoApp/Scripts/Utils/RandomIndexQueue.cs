@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Serilog;
 using UnityEngine;
 
 public class RandomIndexQueue
@@ -43,6 +41,6 @@ public class RandomIndexQueue
         {
             output += i + " ";
         }
-        Log.Debug(output);
+        Debug.Log(output);
     }
 }
