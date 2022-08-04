@@ -674,20 +674,6 @@ MonoBehaviour:
     HeartbeatIP: 0.0.0.0
     HeartbeatPort: 13000
     UseHeartbeat: 0
-    SignalRUri: http://alibabamigrationtest.eastus.cloudapp.azure.com:8080/gameBayHub
-    CMSDownloadFolder: C:\GameBay\Media\
-    CMSDataFolder: C:\GameBay\Data\
-    UseAPI: 1
-    ContinuousPolling: 1
-    StateApiBaseUrl: http://10.1.1.100:5556/api/v1/
-    ContentServiceBaseUrl: http://10.1.1.100:5559/api/v1/
-    ScoringServiceBaseUrl: http://10.1.1.100:5557/api/v1
-    ApiGcmStateName: gcm
-    ApiGrdStateName: grd
-    ApiScoringSuffix: scores
-    ApiContentCategoriesName: categories
-    ApiContentActivitiesName: activities
-    ApiContentScreensName: screens
     Volume: 1
   logs: []
   configDidLoad: 0

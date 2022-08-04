@@ -32,6 +32,10 @@ public class DemoSceneManager : BaseSceneManager
         {
             ConfigManager.Instance.generalSettings.Debug = !ConfigManager.Instance.generalSettings.Debug;
         }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Application.Quit();
+        }
 
     }
 
