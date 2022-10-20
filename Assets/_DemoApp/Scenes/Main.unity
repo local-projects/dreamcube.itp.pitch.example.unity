@@ -546,8 +546,9 @@ MonoBehaviour:
   baseSceneNamesList:
   - ClusterRender
   - GameRoom
-  - Calibration
+  - StatsAndCalibration
   ContentScenesNames:
+  - LightInTheDark
   - ReactiveGrids
   - Splat
 --- !u!4 &1627232687

@@ -17,17 +17,20 @@ public class DemoSceneManager : BaseSceneManager
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
+        if (Input.GetKeyUp(KeyCode.RightBracket))
         {
-            Debug.Log("TD Scene Manager 1 Pressed");
-            LoadSceneWithIndex(0);
+            var nextScene = (_currentDemoSceneIndex + 1) % ContentScenesNames.Count;
+            LoadSceneWithIndex(nextScene);
+            Debug.Log($"Scene Manager loading {nextScene}");
         }
-        else if(Input.GetKeyUp(KeyCode.Alpha2))
+        else if(Input.GetKeyUp(KeyCode.LeftBracket))
         {
-            Debug.Log("TD Scene Manager 2 Pressed");
-            LoadSceneWithIndex(1);
+            var nextScene = (_currentDemoSceneIndex - 1);
+            if (nextScene < 0) nextScene = ContentScenesNames.Count - 1;
+            LoadSceneWithIndex(nextScene);
+            Debug.Log($"Scene Manager loading {nextScene}");
         }
-  
+
         else if (Input.GetKeyDown(KeyCode.Z))
         {
             ConfigManager.Instance.generalSettings.Debug = !ConfigManager.Instance.generalSettings.Debug;
@@ -38,6 +41,9 @@ public class DemoSceneManager : BaseSceneManager
         }
 
     }
+
+
+
 
     private void LoadSceneWithIndex(int newDemoSceneIndex)
     {

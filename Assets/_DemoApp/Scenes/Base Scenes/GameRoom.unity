@@ -2038,8 +2038,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press 1, or 2 to switch Demos\nPress X to toggle croshairs\nPress C to
-    toggle ball highlight \nPress V to toggle trail\nPress Z to toggle instructions\nPress
+  m_text: "Press [ for previous demo scene, ] for the next\nPress X to toggle croshairs\nPress
+    C to toggle ball highlight \nPress V to toggle trail\nPress Z to toggle instructions\nPress
     M to toggle the calibration screen\nPress Q to quit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
