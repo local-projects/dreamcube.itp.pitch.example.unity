@@ -23,7 +23,40 @@ public class FloorTarget : MonoBehaviour
     {
         // only be triggered by an object tagged as "Ball"
         if (other.gameObject.CompareTag("Ball"))
+<<<<<<< Updated upstream
             Hit();
+=======
+        {
+            AudioSource.volume = 1f;
+            Transform ballTransform = other.transform;
+            float ballY = ballTransform.position.y;
+            Debug.Log("ballY"+ballY);
+            //AudioSource.pitch = 0.3f + ballY;
+            AudioSource.pitch = (Random.Range(0.3f,1.2f));
+            Debug.Log("pitch"+AudioSource.pitch);
+        }
+    }*/
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            AudioSource.volume = 1f;
+            Transform ballTransform = other.transform;
+            float ballY = ballTransform.position.y;
+            AudioSource.pitch = 0.3f + 0.3f * ballY;
+            //AudioSource.pitch = (Random.Range(1, 10));
+            //Debug.Log(AudioSource.pitch);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            AudioSource.volume = 0;
+        }
+>>>>>>> Stashed changes
     }
 
     public void Hit()
@@ -46,4 +79,12 @@ public class FloorTarget : MonoBehaviour
         AudioSource.pitch = (Random.Range(0.6f, 1.2f));
         AudioSource.Play();
     }
+<<<<<<< Updated upstream
+=======
+
+    private void Update()
+    {
+        //Debug.Log(AudioSource.pitch);
+    }
+>>>>>>> Stashed changes
 }
