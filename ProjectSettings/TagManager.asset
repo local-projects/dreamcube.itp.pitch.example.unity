@@ -12,6 +12,7 @@ TagManager:
   - Fergie Fragment
   - WallMarker
   - Ball Trail
+  - RoomCamera
   layers:
   - Default
   - TransparentFX
