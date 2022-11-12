@@ -9,14 +9,19 @@ public class BallLightActivator : MonoBehaviour
     private void OnEnable()
     {
         GameObject ballObject = GameObject.FindGameObjectWithTag("Ball");
-        _cachedValue = ballObject.GetComponent<Light>().enabled;
-        ballObject.GetComponent<Light>().enabled = true;
+        var light = ballObject.GetComponent<Light>();
+
+        if ( light != null)
+        {
+            _cachedValue = light.enabled;
+            light.enabled = true;
+        }
     }
 
     private void OnDisable()
     {
         GameObject ballObject = GameObject.FindGameObjectWithTag("Ball");
-        if (ballObject)
+        if (ballObject != null)
             ballObject.GetComponent<Light>().enabled = _cachedValue;
     }
 }

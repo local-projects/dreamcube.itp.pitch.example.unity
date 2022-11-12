@@ -445,7 +445,9 @@ MonoBehaviour:
   system: 2
   throwawayUnorderedFrames: 0
   yRotations: 3
-  _trackablePrefab: {fileID: 734038296241471693, guid: 9d3fc05285795e746bd0e4fee50a27de, type: 3}
+  _trackablePrefabs:
+  - {fileID: 3738367287256969295, guid: 9ee31665cd2f95d42af9b3e45b05326c, type: 3}
+  - {fileID: 734038296241471693, guid: 9139ccd3a435b204fa2083fd503dec4d, type: 3}
 --- !u!1 &1461825480
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,8 +550,8 @@ MonoBehaviour:
   - GameRoom
   - StatsAndCalibration
   ContentScenesNames:
-  - LightInTheDark
   - ReactiveGrids
+  - LightInTheDark
   - Splat
 --- !u!4 &1627232687
 Transform:
@@ -758,7 +760,7 @@ GameObject:
   - component: {fileID: 5885308793708439017}
   m_Layer: 0
   m_Name: RoomPreviewCamera
-  m_TagString: Untagged
+  m_TagString: RoomCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
